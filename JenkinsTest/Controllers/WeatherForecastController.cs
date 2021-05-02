@@ -12,20 +12,17 @@ namespace JenkinsTest.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        public IConfiguration configuration { get; }
 
-        public WeatherForecastController(IConfiguration _configuration)
-        {
-            configuration = _configuration;
-        }
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
+        public IConfiguration configuration { get; }
+
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger,IConfiguration _configuration)
         {
             _logger = logger;
         }
